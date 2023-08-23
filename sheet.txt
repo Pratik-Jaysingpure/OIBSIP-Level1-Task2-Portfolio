@@ -1,0 +1,45 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Form Submit</title>
+	  
+</head>
+<body>
+	<div class="content">
+        <center>
+        <form method="post" action="" name="product" id="product">
+
+            <input  type="text" name="name" placeholder="Enter  Name" required>
+                 <label for="naem">Product Link*</label> 
+
+              <label for="naem">Product code</label>  
+            <input  type="text" name="Subject" placeholder="Subject">
+
+            <input type="text" name="email" placeholder="Enter Upi or Paypal" required>
+
+            <textarea name="Message" id="" cols="30" rows="10" placeholder="About Product" required></textarea>
+
+            <button class="click">Submit &#10132;</button>
+            
+
+        </form>
+        </center>
+      
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxZ4CFVLNUI7EnEhe82yGdHogj6BvOY9NflpanfseujMhYTnumBLjhUUGXgG_vTK1o/exec'
+        const form = document.forms['product']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert("Thank you! your form is submitted successfully." ))
+            .then(() => {  window.location.reload(); })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    <br>
+</body>
+</html> -->
+
